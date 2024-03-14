@@ -1,0 +1,28 @@
+_format_version: "3.0"
+_transform: true
+services:
+  - host: httpbin.org
+    name: example_service
+    port: 80
+    protocol: http
+    routes:
+      - name: mocking
+        paths:
+          - /mock
+
+  - host: localhost
+    name: example_service1
+    port: 7001
+    protocol: http
+    routes:
+      - name: my-service
+        methods:
+          - GET
+        hosts:
+          - localhost:7001
+        paths:
+          - /api/weatherforecast/abc
+        strip_path: true
+      - name: my-service1
+        paths:
+          - /api/weatherforecast/bcd
