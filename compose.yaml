@@ -1,0 +1,12 @@
+﻿version: '3.7'
+services: 
+    sfg-service:
+        container_name: sfg-service
+        build:
+            context: .
+            dockerfile: ./SFG.WebApi/Dockerfile
+        ports:
+          - "7001:7001"
+networks: 
+  default:
+    name: kong-comic-net

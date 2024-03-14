@@ -1,0 +1,74 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+        <IsPublishable>false</IsPublishable>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Commons\" />
+    <None Remove="Constants\" />
+    <None Remove="Domains\" />
+    <None Remove="Repositories\" />
+    <None Remove="Services\" />
+    <None Remove="Enums\" />
+    <None Remove="Repositories\Interfaces\" />
+    <None Remove="Services\Implementations\" />
+    <None Remove="Services\Interfaces\" />
+    <None Remove="Domains\Shared\" />
+    <None Remove="Domains\Account\" />
+    <None Remove="Entities\" />
+    <None Remove="Settings\" />
+    <None Remove="ResponseMessages\" />
+    <None Remove="MailBuilder\" />
+    <None Remove="Entities\Posts\" />
+    <None Remove="Domains\Posts\" />
+    <None Remove="Kafka\" />
+    <None Remove="Domains\Comment\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commons\" />
+    <Folder Include="Constants\" />
+    <Folder Include="Domains\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Services\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Repositories\Interfaces\" />
+    <Folder Include="Services\Implementations\" />
+    <Folder Include="Services\Interfaces\" />
+    <Folder Include="Domains\Shared\" />
+    <Folder Include="Domains\Account\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Settings\" />
+    <Folder Include="ResponseMessages\" />
+    <Folder Include="MailBuilder\" />
+    <Folder Include="Entities\Posts\" />
+    <Folder Include="Domains\Posts\" />
+    <Folder Include="Kafka\" />
+    <Folder Include="Domains\Comment\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.15">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.15">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.15" />
+    <PackageReference Include="Confluent.Kafka" Version="2.3.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.7.27" />
+  </ItemGroup>
+</Project>

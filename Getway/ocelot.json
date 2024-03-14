@@ -1,0 +1,40 @@
+﻿{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/sfg/Test/test",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7043
+                }
+            ],
+            "UpstreamPathTemplate": "/sfg-getway/Test/test",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/{controller}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7051
+                }
+            ],
+            "UpstreamPathTemplate": "/service1-getway/{controller}",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/{controller}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7013
+                }
+            ],
+            "UpstreamPathTemplate": "/service2-getway/{controller}",
+            "UpstreamHttpMethod": [ "Get" ]
+        }
+    ]
+}
